@@ -2,11 +2,15 @@
   "name": "1xc-payment-package",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "1XC",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.1.3"
+  }
 }
