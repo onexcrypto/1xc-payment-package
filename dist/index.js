@@ -12,10 +12,12 @@ export function initPayment(options) {
     });
 }
 export function createPaymentButton(options) {
+    console.log("options", options);
     const buttonElement = document.createElement('button');
     buttonElement.textContent = options.text;
     buttonElement.addEventListener('click', () => {
-        return initPayment(options);
+        console.log("init payment");
+        initPayment(options);
     });
     const targetElement = document.querySelector(options.targetSelector);
     targetElement.appendChild(buttonElement);

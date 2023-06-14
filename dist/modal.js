@@ -13,14 +13,14 @@ export function createModal() {
         // Passer les informations de la transaction à la page de paiement dans l'iframe
         iframeElement.addEventListener('load', () => {
             var _a;
-            (_a = iframeElement.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(transactionInfo, 'URL_DE_LA_PAGE_DE_PAIEMENT');
+            (_a = iframeElement.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(transactionInfo, 'https://1xcrypto.net');
         });
     }
     function onSubmit(callback) {
         // Code pour écouter les réponses de la page de paiement dans l'iframe
         window.addEventListener('message', (event) => {
             // Vérifier que le message provient de l'URL de la page de paiement
-            if (event.origin === 'URL_DE_LA_PAGE_DE_PAIEMENT') {
+            if (event.origin === 'https://1xcrypto.net') {
                 const { success, transactionId } = event.data;
                 if (success) {
                     callback(null, transactionId);

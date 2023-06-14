@@ -16,7 +16,7 @@ export function createModal() {
 
         // Passer les informations de la transaction à la page de paiement dans l'iframe
         iframeElement.addEventListener('load', () => {
-            iframeElement.contentWindow?.postMessage(transactionInfo, 'URL_DE_LA_PAGE_DE_PAIEMENT');
+            iframeElement.contentWindow?.postMessage(transactionInfo, 'https://1xcrypto.net');
         });
     }
 
@@ -24,7 +24,7 @@ export function createModal() {
         // Code pour écouter les réponses de la page de paiement dans l'iframe
         window.addEventListener('message', (event) => {
             // Vérifier que le message provient de l'URL de la page de paiement
-            if (event.origin === 'URL_DE_LA_PAGE_DE_PAIEMENT') {
+            if (event.origin === 'https://1xcrypto.net') {
                 const { success, transactionId } = event.data;
                 if (success) {
                     callback(null, transactionId);
