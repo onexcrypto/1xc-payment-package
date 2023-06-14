@@ -17,6 +17,7 @@ export function createPaymentButton(options: { text: any; targetSelector: any;cu
     console.log("options",options);
     
     const buttonElement = document.createElement('button');
+    buttonElement.id = options.targetSelector;
     buttonElement.textContent = options.text;
     
     buttonElement.addEventListener('click', () => {
