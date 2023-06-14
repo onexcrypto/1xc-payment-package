@@ -10,6 +10,7 @@
   "keywords": [],
   "author": "1XC",
   "license": "ISC",
+  "repository": "https://github.com/onexcrypto/1xc-payment-package.git",
   "dependencies": {
     "typescript": "^5.1.3"
   }
