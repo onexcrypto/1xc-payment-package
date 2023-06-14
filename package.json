@@ -1,0 +1,17 @@
+{
+  "name": "1xc-payment-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "1XC",
+  "license": "ISC",
+  "repository": "https://github.com/onexcrypto/1xc-payment-package.git",
+  "dependencies": {
+    "typescript": "^5.1.3"
+  }
+}
