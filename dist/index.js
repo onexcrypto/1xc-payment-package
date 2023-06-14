@@ -16,10 +16,10 @@ export function createPaymentButton(options) {
     const buttonElement = document.createElement('button');
     buttonElement.id = options.targetSelector;
     buttonElement.textContent = options.text;
-    buttonElement.addEventListener('click', () => {
+    buttonElement.onclick = function () {
         console.log("init payment");
         initPayment(options);
-    });
+    };
     const targetElement = document.querySelector(options.targetSelector);
     targetElement.appendChild(buttonElement);
 }
