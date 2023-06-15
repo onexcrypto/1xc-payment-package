@@ -1,7 +1,8 @@
 import { createModal } from './modal';
 export function initPayment(options) {
+    console.log("init payment", options);
     const modal = createModal();
-    modal.open();
+    return modal.open();
 }
 export function createPaymentButton(options) {
     console.log("options", options);
@@ -11,7 +12,6 @@ export function createPaymentButton(options) {
     const targetElement = document.querySelector(options.targetSelector);
     targetElement.appendChild(buttonElement);
     buttonElement.onclick = function () {
-        console.log("init payment");
         initPayment(options);
     };
 }
