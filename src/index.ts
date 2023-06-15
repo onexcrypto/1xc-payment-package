@@ -2,15 +2,7 @@ import { createModal } from './modal';
 
 export function initPayment(options: any) {
     const modal = createModal();
-    modal.open(options);
-
-    modal.onSubmit((error: any, transactionId: any) => {
-        if (error) {
-            options.callback(error,);
-        } else {
-            options.callback(transactionId);
-        }
-    });
+    modal.open();
 }
 
 export function createPaymentButton(options: {

@@ -1,43 +1,31 @@
-export function createModal() {
+ export function createModal() {
     const modalElement = document.createElement('div');
-    modalElement.style.display = "block";
-    // Code pour créer et styliser la fenêtre modale
+    modalElement.classList.add('modal');
 
-    function open(transactionInfo: any) {
-        // Code pour afficher la fenêtre modale
+    const modalContentElement = document.createElement('div');
+    modalContentElement.classList.add('modal-content');
 
-        const iframeElement = document.createElement('iframe');
-        iframeElement.setAttribute('src', 'https://1xcrypto.net');
-        iframeElement.setAttribute('frameborder', '0');
-        iframeElement.setAttribute('scrolling', 'no');
-        iframeElement.style.width = '100%';
-        iframeElement.style.height = '100%';
+    const closeButtonElement = document.createElement('span');
+    closeButtonElement.classList.add('close-button');
+    closeButtonElement.innerHTML = '&times;';
 
-        modalElement.appendChild(iframeElement);
+    closeButtonElement.addEventListener('click', () => {
+        closeModal();
+    });
 
-        // Passer les informations de la transaction à la page de paiement dans l'iframe
-        iframeElement.addEventListener('load', () => {
-            iframeElement.contentWindow?.postMessage(transactionInfo, 'https://1xcrypto.net');
-        });
+    modalContentElement.appendChild(closeButtonElement);
+    modalElement.appendChild(modalContentElement);
+
+    function open() {
+        modalElement.style.display = 'block';
     }
 
-    function onSubmit(callback: any) {
-        // Code pour écouter les réponses de la page de paiement dans l'iframe
-        window.addEventListener('message', (event) => {
-            // Vérifier que le message provient de l'URL de la page de paiement
-            if (event.origin === 'https://1xcrypto.net') {
-                const { success, transactionId } = event.data;
-                if (success) {
-                    callback(null, transactionId);
-                } else {
-                    callback('Erreur de paiement');
-                }
-            }
-        });
+    function closeModal() {
+        modalElement.style.display = 'none';
     }
 
     return {
         open,
-        onSubmit
+        closeModal
     };
 }
