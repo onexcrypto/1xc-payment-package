@@ -13,7 +13,7 @@ export function createPaymentButton(options: {
     amount: number;
     callback: any;
 }) {
-    console.log("options", options);
+    // console.log("options", options);
 
     const buttonElement = document.createElement('button');
     buttonElement.id = options.targetSelector;

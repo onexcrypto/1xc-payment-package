@@ -5,7 +5,7 @@ export function initPayment(options) {
     return modal.open();
 }
 export function createPaymentButton(options) {
-    console.log("options", options);
+    // console.log("options", options);
     const buttonElement = document.createElement('button');
     buttonElement.id = options.targetSelector;
     buttonElement.textContent = options.text;
