@@ -17,6 +17,7 @@ export function createModal() {
     modalElement.appendChild(modalContentElement);
     function open() {
         modalElement.style.display = 'block';
+        console.log("modalElement", modalElement);
     }
     function closeModal() {
         modalElement.style.display = 'none';

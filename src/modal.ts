@@ -23,6 +23,8 @@ export function createModal() {
 
     function open() {
         modalElement.style.display = 'block';
+        console.log("modalElement", modalElement);
+        
     }
 
     function closeModal() {
