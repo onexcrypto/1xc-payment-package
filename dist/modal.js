@@ -1,4 +1,8 @@
+import { modalCss } from "./modal.css";
 export function createModal() {
+    const styleElement = document.createElement('style');
+    styleElement.innerHTML = modalCss;
+    document.head.appendChild(styleElement);
     const modalElement = document.createElement('div');
     modalElement.classList.add('modal');
     const modalContentElement = document.createElement('div');
