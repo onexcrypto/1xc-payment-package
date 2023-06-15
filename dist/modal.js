@@ -1,3 +1,8 @@
+import './modal.css';
+const linkElement = document.createElement('link');
+linkElement.rel = 'stylesheet';
+linkElement.href = './modal.css';
+document.head.appendChild(linkElement);
 export function createModal() {
     const modalElement = document.createElement('div');
     modalElement.classList.add('modal');
