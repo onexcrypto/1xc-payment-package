@@ -1,12 +1,13 @@
 export function createModal() {
     const modalElement = document.createElement('div');
+    modalElement.style.display = "block";
     // Code pour créer et styliser la fenêtre modale
 
     function open(transactionInfo: any) {
         // Code pour afficher la fenêtre modale
 
         const iframeElement = document.createElement('iframe');
-        iframeElement.setAttribute('src', 'URL_DE_LA_PAGE_DE_PAIEMENT');
+        iframeElement.setAttribute('src', 'https://1xcrypto.net');
         iframeElement.setAttribute('frameborder', '0');
         iframeElement.setAttribute('scrolling', 'no');
         iframeElement.style.width = '100%';

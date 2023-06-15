@@ -4,5 +4,5 @@ export declare function createPaymentButton(options: {
     targetSelector: any;
     currency: string;
     amount: number;
-    callbak: any;
+    callback: any;
 }): void;
