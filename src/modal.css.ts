@@ -1,3 +1,4 @@
+export const modalCss = `
 .modal {
     display: none;
     position: fixed;
@@ -31,4 +32,4 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
+}`;
