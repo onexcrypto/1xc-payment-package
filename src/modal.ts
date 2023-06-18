@@ -4,13 +4,16 @@ export function createModal() {
     const paymentPageURL = 'https://www.1xcrypto.net/';
 
     function open(transactionInfo: any) {
-        const popupWindow = window.open(paymentPageURL, 'Payment', 'width=800,height=600');
-
+        const popupWindow = window.open(paymentPageURL, '1XC Payment', 'width=800,height=600,modal=yes');
+    
         // Passer les informations de la transaction à la page de paiement dans la nouvelle fenêtre
-        popupWindow?.addEventListener('load', () => {
-            popupWindow.postMessage(transactionInfo, paymentPageURL);
-        });
+        if (popupWindow) {
+            popupWindow.addEventListener('load', () => {
+                popupWindow.postMessage(transactionInfo, paymentPageURL);
+            });
+        }
     }
+    
 
     function onSubmit(callback: Function) {
         // Code pour écouter les réponses de la page de paiement dans la nouvelle fenêtre
