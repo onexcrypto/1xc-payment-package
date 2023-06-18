@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/payment.css">
+</head>
+
+<body>
+    <h1>Page de paiement</h1>
+    <form id="payment-form">
+        <!-- Ajoute les champs nécessaires pour collecter les informations de paiement -->
+        <!-- Par exemple, montant, détails de la carte de crédit, etc. -->
+        <input type="text" name="amount" placeholder="Montant">
+        <input type="text" name="card-number" placeholder="Numéro de carte">
+        <!-- ... Autres champs de paiement ... -->
+        <button type="submit">Payer</button>
+    </form>
+
+    <script src="../js/payment.js"></script>
+    <script>
+        const paymentForm = document.getElementById('payment-form');
+        paymentForm.addEventListener('submit', submitPaymentForm);
+
+        function submitPaymentForm(event) {
+            event.preventDefault();
+            // Récupérer les informations de paiement à partir du formulaire
+            const amount = document.querySelector('input[name="amount"]').value;
+            const cardNumber = document.querySelector('input[name="card-number"]').value;
+            // ... Récupérer les autres informations de paiement ...
+
+            // Appeler une fonction de rappel pour renvoyer les informations de paiement
+            // Par exemple, options.callback(amount, cardNumber, ...)
+        }
+    </script>
+</body>
+
+</html>

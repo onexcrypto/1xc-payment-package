@@ -1,4 +1,4 @@
 export declare function createModal(): {
-    open: () => void;
-    closeModal: () => void;
+    open: (transactionInfo: any) => void;
+    onSubmit: (callback: Function) => void;
 };

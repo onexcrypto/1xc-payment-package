@@ -1,36 +1,31 @@
-import { modalCss } from "./modal.css";
 export function createModal() {
-    const styleElement = document.createElement('style');
-    styleElement.innerHTML = modalCss;
-    document.head.appendChild(styleElement);
     const modalElement = document.createElement('div');
-    modalElement.classList.add('modal');
-    const modalContentElement = document.createElement('div');
-    modalContentElement.classList.add('modal-content');
-    const closeButtonElement = document.createElement('span');
-    closeButtonElement.classList.add('close-button');
-    closeButtonElement.innerHTML = '&times;';
-    closeButtonElement.addEventListener('click', () => {
-        closeModal();
-    });
-    modalContentElement.appendChild(closeButtonElement);
-    modalElement.appendChild(modalContentElement);
-    function open() {
-        modalElement.style.display = 'block';
-        console.log("modalElement", modalElement);
-        // Ajoute ici le contenu supplémentaire au modal
-        const modalTitleElement = document.createElement('h2');
-        modalTitleElement.textContent = 'Mon Modal';
-        const modalTextElement = document.createElement('p');
-        modalTextElement.textContent = 'Contenu du modal...';
-        modalContentElement.appendChild(modalTitleElement);
-        modalContentElement.appendChild(modalTextElement);
+    // Code pour créer et styliser la fenêtre modale
+    const paymentPageURL = './html/payment.html';
+    function open(transactionInfo) {
+        const popupWindow = window.open(paymentPageURL, 'Payment', 'width=800,height=600');
+        // Passer les informations de la transaction à la page de paiement dans la nouvelle fenêtre
+        popupWindow === null || popupWindow === void 0 ? void 0 : popupWindow.addEventListener('load', () => {
+            popupWindow.postMessage(transactionInfo, paymentPageURL);
+        });
     }
-    function closeModal() {
-        modalElement.style.display = 'none';
+    function onSubmit(callback) {
+        // Code pour écouter les réponses de la page de paiement dans la nouvelle fenêtre
+        window.addEventListener('message', (event) => {
+            // Vérifier que le message provient de l'URL de la page de paiement
+            if (event.origin === './html/payment.html') {
+                const { success, transactionId } = event.data;
+                if (success) {
+                    callback(null, transactionId);
+                }
+                else {
+                    callback('Erreur de paiement');
+                }
+            }
+        });
     }
     return {
         open,
-        closeModal
+        onSubmit
     };
 }

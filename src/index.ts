@@ -1,29 +1,24 @@
 import { createModal } from './modal';
 
 export function initPayment(options: any) {
-    console.log("init payment",options);
     const modal = createModal();
-    return modal.open();
+    modal.open(options);
 }
 
 export function createPaymentButton(options: {
-    text: any;
-    targetSelector: any;
+    text: string;
+    targetSelector: string;
     currency: string;
     amount: number;
     callback: any;
 }) {
-    // console.log("options", options);
-
     const buttonElement = document.createElement('button');
-    buttonElement.id = options.targetSelector;
     buttonElement.textContent = options.text;
 
-    const targetElement = document.querySelector(options.targetSelector);
-    targetElement.appendChild(buttonElement);
-    buttonElement.onclick = function () {
+    buttonElement.addEventListener('click', () => {
         initPayment(options);
-    }
+    });
+
+    const targetElement = document.querySelector(options.targetSelector);
+    targetElement?.appendChild(buttonElement);
 }
-
-
