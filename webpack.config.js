@@ -8,7 +8,7 @@ const scriptName = `payment.js`;
 const isProd = process.env.NODE_ENV === "production";
 
 const config = {
-    mode: isProd ? "production": "development",
+    mode: isProd ? "production" : "development",
     entry: {
         index: "./src/index.tsx"
     },
@@ -51,7 +51,7 @@ const config = {
     ]
 }
 
-if(isProd) {
+if (isProd) {
     config.optimization = {
         minimizer: [new TerserWebpackPlugin()]
     }

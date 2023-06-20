@@ -6,7 +6,7 @@
     "strict": true,                           /* Enable all strict type-checking options. */
     "moduleResolution": "Node",
     "noEmit": false,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "outDir": "dist",
     "declaration": true,
     "allowJs": true,
@@ -14,7 +14,6 @@
     "skipLibCheck": true,                     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
     "rootDir": "src",
-    "typeRoots": ["src/types.ts"]
   },
-  "include": ["src/*", "src/core/types.ts"]
+  "include": ["src/*"]
 }
