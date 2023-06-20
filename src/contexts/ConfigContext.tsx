@@ -2,7 +2,7 @@ import { createContext, PropsWithChildren, useContext, useState } from "react";
 import { usePrepareConfig } from "../hooks/useConfig";
 import React from "react";
 import { useTheme } from "@emotion/react";
-import { OnexcConfig, OnexcGateway } from "../core/types";
+import { OnexcConfig, OnexcGateway } from "../types";
 
 type ConfigContextType = ReturnType<typeof usePrepareConfig> & {
     frame: HTMLIFrameElement | undefined;

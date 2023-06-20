@@ -6,8 +6,8 @@
     "strict": true,                           /* Enable all strict type-checking options. */
     "moduleResolution": "Node",
     "noEmit": false,
-    "emitDeclarationOnly": false,
-    "outDir": "dist",
+    "emitDeclarationOnly": true,
+    "outFile": "dist/payment.js",
     "declaration": true,
     "allowJs": true,
     "esModuleInterop": true,

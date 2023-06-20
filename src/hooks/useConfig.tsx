@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { OnexcConfig } from "../core/types";
+import { OnexcConfig } from "../types";
 
 export function usePrepareConfig(conf: OnexcConfig) {
 

@@ -1,4 +1,4 @@
-import { OnexcGateway } from "./types";
+import { OnexcGateway } from "../types";
 
 function setGateway(gateway: OnexcGateway) {
     (window as any).__ONEXC__ = gateway;

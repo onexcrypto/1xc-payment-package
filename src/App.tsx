@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Gateway } from "./contexts/ConfigContext";
 import { lightTheme } from "./theming";
 import { ThemeProvider } from "@emotion/react";
-import { OnexcConfig } from "./core/types";
+import { OnexcConfig } from "./types";
 import { Onexc } from "./core/utils";
 import { PaymentModal } from "./views/modal"
 
