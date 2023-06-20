@@ -7,7 +7,7 @@
     "moduleResolution": "Node",
     "noEmit": false,
     "emitDeclarationOnly": true,
-    "outFile": "dist/payment.js",
+    "outDir": "dist",
     "declaration": true,
     "allowJs": true,
     "esModuleInterop": true,

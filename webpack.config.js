@@ -3,7 +3,7 @@ const packageJson = require("./package.json");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
-const scriptName = `payment.js`;
+const scriptName = `entry.js`;
 
 const isProd = process.env.NODE_ENV === "production";
 
