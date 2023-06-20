@@ -1,17 +1,11 @@
 {
   "name": "onexcpay-js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Onexcrypto payment package",
   "main": "dist/payment.js",
   "author": "Maximilien COMLAN",
   "license": "MIT",
   "private": false,
-  "files": ["dist/payment.js"],
-  "types": "dist/payment.d.ts",
-  "exports": {
-    ".": ["./dist/payment.js"],
-    "./types": "./dist/payment.ts"
-  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack && yarn tsc",
@@ -54,6 +48,14 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
+  "types": "dist/payment.d.ts",
+  "exports": {
+    ".": "./dist/payment.js"
+  },
+  "files": [
+    "dist/*.d.ts",
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/onexcrypto/1xc-payment-package/issues"
   },
