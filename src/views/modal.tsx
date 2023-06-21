@@ -25,9 +25,15 @@ const styles = {
     padding: 20px;
     width: 50%;
     height: 80vh;
-    max-width: 500px;
+    max-width: 600px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   `,
+
+  frame: css`
+    width: 100%;
+    height: 100%;
+    border: none;
+  `
 };
 
 export function PaymentModal(props: ReactModal.Props) {
@@ -39,12 +45,11 @@ export function PaymentModal(props: ReactModal.Props) {
       className={styles.content}
       {...props}
     >
-      <div>
-        <iframe
-          ref={(el) => gateway.configure(el as any)}
-          src={gateway.url}
-        ></iframe>
-      </div>
+      <iframe
+        ref={(el) => gateway.configure(el as any)}
+        src={gateway.url}
+        className={styles.frame}
+      ></iframe>
     </ReactModal>
   );
 }
