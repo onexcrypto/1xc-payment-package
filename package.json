@@ -1,6 +1,6 @@
 {
   "name": "onexcpay-js",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Onexcrypto payment package",
   "main": "dist/payment.js",
   "author": "Maximilien COMLAN",
@@ -10,10 +10,12 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack && yarn tsc",
     "tsup": "tsup src/index.tsx --dts --format esm,cjs --minify terser",
-    "prepublish": "yarn build",
+    "tsup:watch": "yarn tsup --watch",
+    "prepublish": "yarn tsup",
     "start": "serve dist"
   },
   "dependencies": {
+    "@emotion/css": "^11.11.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "axios": "^1.4.0",
@@ -52,7 +54,8 @@
   },
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./styles.css": "./dist/styles/index.css"
   },
   "files": [
     "dist/*.d.ts",
