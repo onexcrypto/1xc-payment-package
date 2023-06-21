@@ -1,6 +1,6 @@
 {
   "name": "onexcpay-js",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Onexcrypto payment package",
   "main": "dist/payment.js",
   "author": "Maximilien COMLAN",
