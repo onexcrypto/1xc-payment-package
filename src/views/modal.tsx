@@ -12,7 +12,7 @@ const styles = {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.75);
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   `,
 
@@ -20,13 +20,16 @@ const styles = {
     position: relative;
     background: #f9f9f9;
     overflow: auto;
-    border-radius: 4px;
     outline: none;
-    padding: 20px;
-    width: 50%;
-    height: 80vh;
+    width: 800px;
+    height: 100vh;
     max-width: 600px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    @media-screen and(max-width: 900px) {
+      width: 100%;
+    }
   `,
 
   frame: css`

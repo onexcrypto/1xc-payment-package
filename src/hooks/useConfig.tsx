@@ -4,7 +4,7 @@ import { OnexcConfig } from "../types";
 export function usePrepareConfig(conf: OnexcConfig) {
 
     const paymentUrl = useMemo(() => {
-        return conf.mode === "test" ? "https://sandbox-payment.1xcrypto.net" : "https://payment.1xcrypto.net";
+        return conf.mode === "test" ? "https://sandbox-portal.1xcrypto.net" : "https://portal.1xcrypto.net";
     }, [conf.mode]);
 
     return {
