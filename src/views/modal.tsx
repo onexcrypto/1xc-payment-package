@@ -14,6 +14,7 @@ const styles = {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    transition: all 150ms linear;
   `,
 
   content: css`

@@ -1,13 +1,22 @@
-export interface OnexcRequest {
-
+export interface OnexcPaymentEvent {
+    intentId: string;
+    projectId: string;
+    status: "paid";
+    intent: any;
+    walletId: string;
 }
 
-export interface OnexcInvoice {
-
+export interface OnexcPaymentFailure {
+    reason: string;
+    is_attempt_error: boolean;
+    intentId: string;
+    projectId: string;
+    status: "failed",
+    attempt_count?: number;
 }
 
-export interface OnexcPayment {
-
+export interface OnexcPaymentCancellation {
+    reason: "login_failed" | "window_closed";
 }
 
 export interface OnexcGateway {
@@ -17,8 +26,8 @@ export interface OnexcGateway {
 
 export interface OnexcConfig {
     mode: "live" | "test";
-    apiKey: string;
     intentId: string;
-    onFulfilled?(request: OnexcRequest, invoice: OnexcInvoice, payment: OnexcPayment): any;
-    onCancelled?(request: OnexcRequest, invoice?: OnexcInvoice): any
+    onPaid?(params: OnexcPaymentEvent): any;
+    onFailed?(params: OnexcPaymentFailure): any;
+    onCancelled?(params: OnexcPaymentCancellation): any;
 }
